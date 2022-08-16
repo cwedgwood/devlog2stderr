@@ -25,6 +25,13 @@ func dgram() {
 			log.Printf("ERROR reading packet: '%v'", err)
 			continue
 		}
+
+		// rfc3164?
+		if rfc3164(pktbuf[:n]) {
+			continue
+		}
+
+		// best effort
 		log.Println(strconv.Quote(strings.TrimRight(string(pktbuf[:n]), "\r\n\t ")))
 	}
 }

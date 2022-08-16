@@ -17,8 +17,8 @@ ls -l /proc/*/exe
 
 echo "-"
 # test priorities
+logger --id=1234 -p0 p0
 logger --id=1234 -p1 p1
-logger --id=1234 -p2 p2
 logger --id=4567 -p6 p6
 logger --id=4567 -p7 p7
 
