@@ -23,7 +23,7 @@ func dgram() {
 		n, _, err := dgsock.ReadFrom(pktbuf)
 		if err != nil {
 			log.Printf("ERROR reading packet: '%v'", err)
-			continue
+			continue // FIXME, continue on error isn't always right
 		}
 
 		// rfc3164?
